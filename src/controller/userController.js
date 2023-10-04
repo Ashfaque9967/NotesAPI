@@ -67,4 +67,4 @@ const signin = async (req, res) =>{
 
 }
 
-module.exports = {signup, signin};
+module.exports = {signup, signin, SECRET_KEY};
