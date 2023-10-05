@@ -6,7 +6,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 
 
-dotenv.config();
+dotenv.config({ path : "C:\Users\shaik\NoteAPI/.env"});
 
 const mongoose = require("mongoose");
 
@@ -19,7 +19,8 @@ app.use("/notes", noteRouter);
 
 const PORT = process.env.PORT || 3000;
 
-mongoose.connect(process.env.MONGO_URL).then(()=>{
+mongoose.connect("mongodb+srv://admin:admin@mumbai.rtj7cio.mongodb.net/notes_db")
+.then(()=>{
 
 app.listen(PORT, ()=>{
 
@@ -28,7 +29,6 @@ app.listen(PORT, ()=>{
 });
 
 })
-
 .catch((error)=>{
     console.log(error);
 });
